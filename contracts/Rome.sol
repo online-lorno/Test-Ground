@@ -1,22 +1,17 @@
-pragma solidity =0.7.4;
+pragma solidity =0.7.5;
 
 
-import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-solidity/master/contracts/token/ERC20/ERC20.sol";
-//import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.2.1-solc-0.7/contracts/token/ERC20/ERC20.sol";
 
-//using SafeMath for uint256;
-/*
-testing rome contract to figure out how to mint supporter erc721 tokens based on capital invested
-*/
+
+
 contract Rome is ERC20 {
     using SafeMath for uint256;
 
     constructor() ERC20("Rome", "ROME") public {
 
     }
-    /*
-    Takes eth and mints rome. 10 rome per eth. Testing function
-    */
+
 
     function buyRome(uint256 amount) public payable{
 

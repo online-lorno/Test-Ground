@@ -1,18 +1,19 @@
-pragma solidity =0.7.4;
+pragma solidity =0.7.5;
 
 
-import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/token/ERC721/ERC721.sol";
-import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/access/Ownable.sol";
-
-/*
-mock up contract that lets people buy a roman citizenship as an erc721 token
-*/
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.2.1-solc-0.7/contracts/token/ERC721/ERC721.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.2.1-solc-0.7/contracts/access/Ownable.sol";
+import "Rome.sol";
 
 contract Citizenship is ERC721, Ownable {
+    using SafeMath for uint256;
 
     uint256 public citizenCount;
+    address public RomeContract = 0xaE036c65C649172b43ef7156b009c6221B596B8b;
+    Rome public roma;
 
     constructor () ERC721("RomanCitizenship", "RCIT") public {
+        roma = Rome(RomeContract);
         citizenCount = 0;
     }
 
@@ -21,11 +22,16 @@ contract Citizenship is ERC721, Ownable {
     which is a nft erc721 token that makes them a member of the roman empire
     */
 
-    function buyCitizenship() public payable {
-        require(msg.value == .5 ether, "Sent ether does not match citizenship price");
+    function redeemCitizenship() public {
+        require(roma.balanceOf(msg.sender) >= 20, "You dont have enough Rome tokens to become a citizen");
         require(balanceOf(msg.sender)==0, "This address is already a Roman citizen");
         _safeMint(msg.sender, citizenCount);
         citizenCount++;
+    }
+
+    function test() public view returns(uint){
+        uint256 bal = roma.balanceOf(msg.sender);
+        return bal;
     }
 
 
