@@ -1,0 +1,18 @@
+-citizenship tokens
+-"land" in empire
+-buy citizenship erc721 with erc20 rome token
+-rome is secondary sharing token
+
+
+
+Tokens:
+
+Erc721:
+  Citizenship tokens - buy with rome
+  Land Tokens - buy with rome
+  Maybe some to use as amplifiers?
+  
+  
+ERC20
+  Rome - buy nft tokens, and use as liquidity
+  
