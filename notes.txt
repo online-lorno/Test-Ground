@@ -1,5 +1,5 @@
 -citizenship tokens
--"land" in empire
+  -"land" in empire
 -buy citizenship erc721 with erc20 rome token
 -rome is secondary sharing token
 
