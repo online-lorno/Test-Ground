@@ -34,7 +34,7 @@ contract Rome is ERC20 {
     }
 
     //
-    function prepareCashOut(uint256 romeToBurn) public{
+    function prepareUnstake(uint256 romeToBurn) public{
         // make sure the sender actually at least as much rome as they want to burn
         require(balanceOf(msg.sender) >= romeToBurn);
         //destroy the rome tokens
@@ -46,7 +46,7 @@ contract Rome is ERC20 {
     }
 
     //must be executed at least one block later than prepareCashOut
-    function cashOut(uint256 etherToTakeOut) public{
+    function unstake(uint256 etherToTakeOut) public{
         //must have enough eth ready to cash out for argument passed in
         require(users[msg.sender].redeemedEther >= etherToTakeOut, "trying to withdraw more eth than you have prepared to cash out");
         //must have passed one block at least since burning rome to convert to eth
@@ -60,4 +60,3 @@ contract Rome is ERC20 {
 
 
 }
-
