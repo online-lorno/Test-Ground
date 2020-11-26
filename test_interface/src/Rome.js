@@ -1,7 +1,7 @@
 import web3 from "./web3";
 
 
-const address = "0x9E03599E8FCC2cBF882BC5a3aC84043635f447e8";
+const address = "0xac04C875753BAA3878B70c0a65f1f0bbAdFf06b2";
 
 
 
@@ -34,25 +34,6 @@ const abi = [
             }
         ],
         "name": "Approval",
-        "type": "event"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": true,
-                "internalType": "address",
-                "name": "previousOwner",
-                "type": "address"
-            },
-            {
-                "indexed": true,
-                "internalType": "address",
-                "name": "newOwner",
-                "type": "address"
-            }
-        ],
-        "name": "OwnershipTransferred",
         "type": "event"
     },
     {
@@ -148,6 +129,19 @@ const abi = [
         "type": "function"
     },
     {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "buyRome",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
         "inputs": [],
         "name": "decimals",
         "outputs": [
@@ -185,19 +179,6 @@ const abi = [
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "getPercentageOfTotalStaked",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
         "inputs": [
             {
                 "internalType": "address",
@@ -222,19 +203,6 @@ const abi = [
         "type": "function"
     },
     {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "amount",
-                "type": "uint256"
-            }
-        ],
-        "name": "mint",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
         "inputs": [],
         "name": "name",
         "outputs": [
@@ -248,53 +216,14 @@ const abi = [
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "owner",
-        "outputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "mushAmount",
+                "name": "romeToBurn",
                 "type": "uint256"
             }
         ],
-        "name": "previewUnstake",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "renounceOwnership",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "usdc_amount",
-                "type": "uint256"
-            }
-        ],
-        "name": "stake",
+        "name": "prepareUnstake",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -381,21 +310,8 @@ const abi = [
     {
         "inputs": [
             {
-                "internalType": "address",
-                "name": "newOwner",
-                "type": "address"
-            }
-        ],
-        "name": "transferOwnership",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
                 "internalType": "uint256",
-                "name": "mushAmount",
+                "name": "etherToTakeOut",
                 "type": "uint256"
             }
         ],

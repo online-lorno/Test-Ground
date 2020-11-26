@@ -12,7 +12,7 @@ function callBack(err, result) {
     console.warn("balance ballls ballls balls ballllsss");
 }
 
-class Invest extends Component{
+class Liquidate extends Component{
 
 
 
@@ -85,11 +85,11 @@ class Invest extends Component{
                 }}>
 
 
-                <h4 style={{ color: 'Black', fluid: false }}>Invest USDC</h4 >
+                <h4 style={{ color: 'Black', fluid: false }}>Remove Funds</h4 >
                 <Form.Field >
                     <input
                         style={{width:'80%'}}
-                        placeholder="How many USDC tokens would you like to invest?"
+                        placeholder="How many Mushroom tokens would you like to exchange?"
                         onChange={event =>
                             this.setState({
                                 amount: event.target.value
@@ -98,12 +98,9 @@ class Invest extends Component{
                     />
                 </Form.Field>
                 <br/>
-                <h4 style={{ color: 'Black', margin: 0, }} align="center">   Tokens will be used for investments and you will get MUSH tokens based on your share of the investment pool. (Approve Both Transactions)</h4>
-                    <br/>
-
-
-                <button id={'setLocation'} className={'btn btn-md btn-success'} style={{color:'black'}} onClick={this.invest}>
-                    <span>Invest Tokens</span>
+                <h4 style={{ color: 'Black', margin: 0  }}>   Your mushrooms will be BURNED and you will receive an equivalent stake of the pool if funds are available, and not currently tied up in investments.</h4>
+                    <button id={'setLocation'} className={'btn btn-md btn-success'} style={{color:'black'}} onClick={this.invest}>
+                    <span>Remove Funds</span>
                 </button>
 
                 </Card>
@@ -111,4 +108,4 @@ class Invest extends Component{
         )
     }
 };
-export default Invest;
+export default Liquidate;
