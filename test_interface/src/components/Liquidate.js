@@ -38,13 +38,14 @@ class Liquidate extends Component{
 
             const batch = new web3.eth.BatchRequest();
 
+            const weiValue = web3.utils.toWei(this.state.amount, 'ether');
+
             /*
             batch.add(Rome.methods.buyRome(this.state.amount).send.request({from: accounts[0], value: this.state.amount*10000000000000000}, callBack));
             batch.add(Rome.methods.buyRome(this.state.amount).send.request({from: accounts[0], value: this.state.amount*10000000000000000}, callBack));
             */
 
-            batch.add(Rome.methods.approve(Mushroom.options.address, this.state.amount).send.request({from: accounts[0]}, callBack));
-            batch.add(Mushroom.methods.stake(this.state.amount).send.request({from: accounts[0]}, callBack));
+            batch.add(Mushroom.methods.unstake(weiValue).send.request({from: accounts[0]}, callBack));
 
 
 
