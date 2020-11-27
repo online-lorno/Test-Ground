@@ -1,7 +1,7 @@
 import web3 from "./web3";
 
 
-const address = "0x9E03599E8FCC2cBF882BC5a3aC84043635f447e8";
+const address = "0xE49E5fC4dEf717b16E61e64f282b66eaE7c80Bc6";
 
 
 
@@ -125,6 +125,19 @@ const abi = [
                 "type": "bool"
             }
         ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "newInvestor",
+                "type": "address"
+            }
+        ],
+        "name": "approveInvestor",
+        "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
     },
@@ -280,6 +293,24 @@ const abi = [
         "type": "function"
     },
     {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "usdc_amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "fundVal",
+                "type": "uint256"
+            }
+        ],
+        "name": "putReturnsBackIn",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
         "inputs": [],
         "name": "renounceOwnership",
         "outputs": [],
@@ -310,6 +341,19 @@ const abi = [
             }
         ],
         "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "takeMoneyOutForInvesting",
+        "outputs": [],
+        "stateMutability": "nonpayable",
         "type": "function"
     },
     {
@@ -394,6 +438,19 @@ const abi = [
     {
         "inputs": [
             {
+                "internalType": "address",
+                "name": "badInvestor",
+                "type": "address"
+            }
+        ],
+        "name": "unapproveInvestor",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "internalType": "uint256",
                 "name": "mushAmount",
                 "type": "uint256"
@@ -402,6 +459,32 @@ const abi = [
         "name": "unstake",
         "outputs": [],
         "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "viewContractValue",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "viewEstValue",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
         "type": "function"
     }
 ];

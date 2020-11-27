@@ -36,16 +36,23 @@ class Invest extends Component{
 
             console.log(accounts[0]);
 
-            const batch = new web3.eth.BatchRequest();
+            //const batch = new web3.eth.BatchRequest();
+
+            const weiValue = web3.utils.toWei(this.state.amount, 'ether');
+
 
             /*
             batch.add(Rome.methods.buyRome(this.state.amount).send.request({from: accounts[0], value: this.state.amount*10000000000000000}, callBack));
             batch.add(Rome.methods.buyRome(this.state.amount).send.request({from: accounts[0], value: this.state.amount*10000000000000000}, callBack));
             */
 
-            batch.add(Rome.methods.approve(Mushroom.options.address, this.state.amount).send.request({from: accounts[0]}, callBack));
-            batch.add(Mushroom.methods.stake(this.state.amount).send.request({from: accounts[0]}, callBack));
+            /*
+            batch.add(Rome.methods.approve(Mushroom.options.address, weiValue).send.request({from: accounts[0]}, callBack));
+            batch.add(Mushroom.methods.stake(weiValue).send.request({from: accounts[0]}, callBack));
+            */
 
+            await Rome.methods.approve(Mushroom.options.address, weiValue).send({from: accounts[0]});
+            await Mushroom.methods.stake(weiValue).send({from: accounts[0]});
 
 
             /*
@@ -64,7 +71,7 @@ class Invest extends Component{
              */
             // batches let you put more than one transaction together to be processed at one
             // need them for approve transfer, then transferfrom when using erc tokens
-            await batch.execute();
+            //await batch.execute();
 
             //await Rome.methods.buyRome(this.state.amount).send({from: accounts[0], value: this.state.amount*10000000000000000, gas: 100000000000000});
 

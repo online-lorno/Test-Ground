@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card, Form} from "semantic-ui-react";
 import {React, Text} from "react";
+import Dashboard from "./components/Dashboard";
 
 
 
@@ -29,8 +30,11 @@ function App() {
           <h1 style={{ color: 'white', margin: 0, 'text-shadow': '0px 0px 2px #35FFEC' }}>
               Welcome to Mushroom Capital
           </h1>
+          <br/><br/><br/><br/><br/>
+          <Dashboard/>
       </header>
         <Container>
+
             <Row>
                 <Col sm>
                     <Invest/>
@@ -44,7 +48,7 @@ function App() {
             backgroundColor: 'transparent'
         }}>
             <h3 style={{ color: 'EBEBEB', margin: 0, 'text-shadow': '0px 0px 2px #35FFEC'   }}>
-                All initial investments are subject to a 1 month holding period to account for slippage.
+                All initial investments are subject to up to a 1 month holding period to account for slippage.
             </h3>
             <h3 style={{ color: 'EBEBEB', margin: 0, 'text-shadow': '0px 0px 2px #35FFEC'   }}>
                 Prices may fluctuate, and Mushroom Capital is not responsible for temporary or permanent loss of funds.

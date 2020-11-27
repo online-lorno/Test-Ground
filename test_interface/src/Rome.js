@@ -1,7 +1,7 @@
 import web3 from "./web3";
 
 
-const address = "0xac04C875753BAA3878B70c0a65f1f0bbAdFf06b2";
+const address = "0x4ACC05a704bA4f23aF85fd29C7529c44Ac8e48c3";
 
 
 
@@ -199,6 +199,19 @@ const abi = [
                 "type": "bool"
             }
         ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "mint",
+        "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
     },
