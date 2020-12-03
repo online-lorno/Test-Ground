@@ -14,7 +14,7 @@ import Mushroom from "./Mushroom";
 import Rome from "./Rome";
 import { flexbox } from '@material-ui/system';
 import Box from '@material-ui/core/Box';
-
+import colosseum from './resources/colosseum.jpg';
 
 
 //here and not in style sheet because css doesnt like text-shadow 33cd0c 35FFEC
@@ -33,7 +33,7 @@ class About extends Component{
         return (
             //set mushroom forest background, make it fill screen
             <div className="App" style={{
-                backgroundImage: "url(" + "https://images8.alphacoders.com/600/600182.jpg" + ")",
+                backgroundImage: `url(${colosseum})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
@@ -43,8 +43,9 @@ class About extends Component{
                 }}>
                     <br/><br/><br/><br/>
                     <h1 style={radiantWhite}> {/* neat white text with blue fading outline */}
-                        Welcome to Mushroom Capital
-                        We do things
+                        Welcome to Rome Finance
+                        <br/>
+                        Join the Empire
                     </h1>
                 </header>
             </div>

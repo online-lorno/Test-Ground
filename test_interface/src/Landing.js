@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import web3 from "./web3";
 import Invest from "./components/Invest";
@@ -14,6 +14,9 @@ import Mushroom from "./Mushroom";
 import Rome from "./Rome";
 import { flexbox } from '@material-ui/system';
 import Box from '@material-ui/core/Box';
+//import colosseum from './resources/colosseum.jpg';
+import statue from './resources/statue.jpg';
+
 
 
 
@@ -105,7 +108,7 @@ class Landing extends Component{
         return (
             //set mushroom forest background, make it fill screen
             <div className="App" style={{
-                backgroundImage: "url(" + "https://images8.alphacoders.com/600/600182.jpg" + ")",
+                backgroundImage: `url(${statue})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
@@ -115,7 +118,7 @@ class Landing extends Component{
                 }}>
                     <br/><br/><br/><br/>
                     <h1 style={radiantWhite}> {/* neat white text with blue fading outline */}
-                        Welcome to Mushroom Capital
+                        Welcome to Rome Finance
                     </h1>
                     <br/><br/><br/><br/><br/> {/*Tons of new lines*/}
                     <Dashboard TotalMush={this.state.TotalMush} UserMush={this.state.UserMush}
@@ -127,15 +130,16 @@ class Landing extends Component{
                 {/*
                      Uses bootstrap cols and rows to make everything all nice and scalable
                     */}
-                    <Box width="100%">
-                        <Card>
-                        <Invest Update={this.Update} waitingOnContract={this.state.waitingOnContract} UpdateWaitingOnContract={this.UpdateWaitingOnContract} /> {/* render invest child component from invest.js */}
-                        </Card>
-                    </Box>
-                    <Box width="100%">
-                        <Liquidate Update={this.Update} waitingOnContract={this.state.waitingOnContract} UpdateWaitingOnContract={this.UpdateWaitingOnContract}/> {/* render liquidate child component from liquidate.js */}
-                    </Box>
-
+                <Container>
+                    <Row>
+                        <Col sm>
+                            <Invest Update={this.Update} waitingOnContract={this.state.waitingOnContract} UpdateWaitingOnContract={this.UpdateWaitingOnContract} /> {/* render invest child component from invest.js */}
+                        </Col>
+                        <Col sm>
+                            <Liquidate Update={this.Update} waitingOnContract={this.state.waitingOnContract} UpdateWaitingOnContract={this.UpdateWaitingOnContract}/> {/* render liquidate child component from liquidate.js */}
+                        </Col>
+                    </Row>
+                </Container>
                 <header className="App-header" style={{
                     backgroundColor: 'transparent'
                 }}>
