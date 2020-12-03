@@ -5,11 +5,11 @@ import Mushroom from "../Mushroom";
 import Rome from "../Rome";
 //import Card from 'react-bootstrap/Card'
 //import Box from '@material-ui/core/Box';
+import { Grid, Paper } from '@material-ui/core';
 
 
 function callBack(err, result) {
     console.warn(result);
-    console.warn("balance ballls ballls balls ballllsss");
 }
 
 class Invest extends Component{
@@ -115,12 +115,18 @@ class Invest extends Component{
          */
         return(
             <div>
-                <Card style={{
+                <Grid
+                    container
+                    direction="row"
+                    justify="space-evenly"
+                    alignItems="center"
+                    style={{
                     backgroundColor: '#fd00ff'
                 }}>
 
-
-                    <h4 style={{ color: 'Black', fluid: false }}>Invest USDC</h4 >
+                    <Grid item xs={3}>
+                    <h4 style={{ color: 'Black', fluid: false }}>Invest USDC </h4 >
+                    </Grid>
                     {/*
                      Form that updates a value in order for the chain call function to know how much
                      to put into the invest function of the contract when its called later on the button press
@@ -132,28 +138,33 @@ class Invest extends Component{
                      back from jordan in ecocap that doesnt need to be that complex?
 
                     */}
-                    <Form.Field >
-                        <input
-                            style={{width:'80%'}}
-                            placeholder="How many USDC tokens would you like to invest?"
-                            onChange={event =>
-                                this.setState({
-                                    amount: event.target.value
-                                })
-                            }
-                        />
-                    </Form.Field>
-                    <br/>
-                    <h4 style={{ color: 'Black', margin: 0, }} align="center">   Tokens will be used for investments and you will get MUSH tokens based on your share of the investment pool. (Approve Both Transactions)</h4>
-                    <br/>
+                    <Grid item xs={6}>
+                        <Form.Field >
+                            <input
+                                //style={{width:'80%'}}
+                                placeholder="How many USDC tokens would you like to invest?"
+                                onChange={event =>
+                                    this.setState({
+                                        amount: event.target.value
+                                    })
+                                }
+                            />
+                        </Form.Field>
+                    </Grid>
+
+
+                    {/*<h4 style={{ color: 'Black', margin: 0, }} align="center">   Tokens will be used for investments and you will get MUSH tokens based on your share of the investment pool. (Approve Both Transactions)</h4>*/}
+
                     {/*
                      Button that calls function to send invest transactions to chain
                     */}
+                    <Grid item xs={3}>
                     <button id={'setLocation'} className={'btn btn-md btn-success'} disabled={this.props.waitingOnContract} style={{color:'black'}} onClick={this.invest}>
                         <span>{this.ButtonText()}</span>
                     </button>
+                    </Grid>
 
-                </Card>
+                </Grid>
             </div>
         )
     }

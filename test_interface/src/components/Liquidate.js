@@ -9,7 +9,6 @@ import Rome from "../Rome";
 
 function callBack(err, result) {
     console.warn(result);
-    console.warn("balance ballls ballls balls ballllsss");
 }
 
 class Liquidate extends Component{
@@ -106,7 +105,7 @@ class Liquidate extends Component{
                             }
                         />
                     </Form.Field>
-                    <br/>
+
                     <h4 style={{ color: 'Black', margin: 0  }}>   Your mushrooms will be BURNED and you will receive an equivalent stake of the pool if funds are available, and not currently tied up in investments.</h4>
                     <button id={'setLocation'} className={'btn btn-md btn-success'} disabled={this.props.waitingOnContract} style={{color:'black'}} onClick={this.invest}>
                         <span>{this.ButtonText()}</span>

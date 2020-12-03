@@ -16,7 +16,6 @@ const moneyBlack = {color: 'black', margin: 0, 'text-shadow': '0px 0px 2px #33cd
 
 function callBack(err, result) {
     console.warn(result);
-    console.warn("balance ballls ballls balls ballllsss");
 }
 
 class Dashboard extends Component{
