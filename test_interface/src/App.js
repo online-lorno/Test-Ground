@@ -5,15 +5,33 @@ import Landing from './Landing';
 import About from './About';
 import Navigation from './components/Navigation';
 import Card from "react-bootstrap/Card";
+import Rome_Cover from "./resources/Rome-cover.png";
 
+/*
+rome color hexes.
+#990000 - red
+#D4AF37 - yellow
+ */
 
 class App extends Component {
     render() {
         return (
             <BrowserRouter>
+                <div className="App" style={{
+                    backgroundImage: `url(${Rome_Cover})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat'
+                }}>
+                    <header style={{
+                        backgroundColor: 'transparent',
+                        'min-height': '33vh'
+                    }}> {/* vh stands for viewpoint height. Viewport = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.*/}
+                    </header>
+                </div>
                 <div>
                     <Card style={{
-                        backgroundColor: '#fd00ff',
+                        backgroundColor: 'black',
                         'flex-direction': 'row',
                         alignItems: "center",
                         display: "flex"
@@ -22,14 +40,14 @@ class App extends Component {
                             even need to go as high level as react! works on most components
                              https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/}
                         <Card style={{
-                            backgroundColor: 'red',
+                            backgroundColor: '#990000',
                         }}>
-                            <NavLink to="/">Home</NavLink>
+                            <NavLink to="/" style={{color: '#D4AF37'}}>Home</NavLink>
                         </Card>
                         <Card style={{
-                            backgroundColor: 'red',
+                            backgroundColor: '#990000',
                         }}>
-                            <NavLink to="/about">About</NavLink>
+                            <NavLink to="/about" style={{color: '#D4AF37'}}>About</NavLink>
                         </Card>
                     </Card>
                     <Switch>
