@@ -3,6 +3,7 @@ import {BrowserRouter, NavLink, Route, Switch} from 'react-router-dom';
 
 import Landing from './Landing';
 import About from './About';
+import Pools from './Pools';
 import Navigation from './components/Navigation';
 import Card from "react-bootstrap/Card";
 import Rome_Cover from "./resources/Rome-cover.png";
@@ -49,10 +50,16 @@ class App extends Component {
                         }}>
                             <NavLink to="/about" style={{color: '#D4AF37'}}>About</NavLink>
                         </Card>
+                        <Card style={{
+                            backgroundColor: '#990000',
+                        }}>
+                            <NavLink to="/pools" style={{color: '#D4AF37'}}>Pools</NavLink>
+                        </Card>
                     </Card>
                     <Switch>
                         <Route path="/" component={Landing} exact/>
                         <Route path="/about" component={About}/>
+                        <Route path="/pools" component={Pools}/>
                     </Switch>
                     {/*<Route path="/stake" component={Stake}/>}*/}
                 </div>
