@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&family=Alegreya+Sans+SC:wght@400;700&family=Inter:wght@400;700&display=swap');
+
+body {
+	/* --tw-bg-opacity: 1;
+
+	background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+	color: #fff; */
+
+	@apply tracking-wider;
+}
+
+.btn {
+	@apply font-mono font-bold uppercase text-white bg-gradient-to-b from-yellow-600 to-red-700 py-2 px-8 rounded border-2 border-yellow-400;
+
+	text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.5);
+}
