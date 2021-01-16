@@ -2,14 +2,18 @@
 import React from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import BasicLayout from './layouts/BasicLayout';
-import AboutPage from './pages/AboutPage';
-import ContactUsPage from './pages/ContactUsPage';
+import AgoraPage from './pages/AgoraPage';
+import FaqPage from './pages/FaqPage';
 import HomePage from './pages/HomePage';
+import PresalePage from './pages/PresalePage';
+import StakePage from './pages/StakePage';
 
 const routes = [
 	{ path: '/', exact: true, Layout: BasicLayout, Component: HomePage },
-	{ path: '/about', exact: true, Layout: BasicLayout, Component: AboutPage },
-	{ path: '/contact-us', exact: true, Layout: BasicLayout, Component: ContactUsPage }
+	{ path: '/presale', exact: true, Layout: BasicLayout, Component: PresalePage },
+	{ path: '/agora', exact: true, Layout: BasicLayout, Component: AgoraPage },
+	{ path: '/faq', exact: true, Layout: BasicLayout, Component: FaqPage },
+	{ path: '/stake', exact: true, Layout: BasicLayout, Component: StakePage }
 ];
 
 function Routes() {

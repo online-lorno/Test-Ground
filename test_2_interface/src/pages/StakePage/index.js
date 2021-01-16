@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { reset } from '../../redux/actions/AboutPage';
-import AboutPage from './AboutPage';
+import { reset } from '../../redux/actions/StakePage';
+import StakePage from './StakePage';
 
 const mapsStateToProps = (state) => ({
-	pageProps: state.AboutPage
+	pageProps: state.StakePage
 });
 
 const mapsDispatchToProps = (dispatch) => ({
@@ -15,4 +15,4 @@ const mapsDispatchToProps = (dispatch) => ({
 export default connect(
 	mapsStateToProps,
 	mapsDispatchToProps
-)(AboutPage);
+)(StakePage);

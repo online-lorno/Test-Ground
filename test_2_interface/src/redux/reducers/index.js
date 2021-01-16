@@ -1,12 +1,16 @@
 import { connectRouter } from 'connected-react-router';
 import { combineReducers } from 'redux';
-import AboutPage from './AboutPage';
-import ContactUsPage from './ContactUsPage';
+import AgoraPage from './AgoraPage';
+import FaqPage from './FaqPage';
 import HomePage from './HomePage';
+import PresalePage from './PresalePage';
+import StakePage from './StakePage';
 
 export default (history) => combineReducers({
 	router: connectRouter(history),
 	HomePage,
-	AboutPage,
-	ContactUsPage
+	PresalePage,
+	AgoraPage,
+	FaqPage,
+	StakePage
 });

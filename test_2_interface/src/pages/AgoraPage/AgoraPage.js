@@ -2,23 +2,23 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 
-function ContactUsPage(props) {
+function AgoraPage(props) {
 	useEffect(() => () => {
 		props.reset();
 	}, []);
 
 	return (
-		<section>
-			<div className="container max-w-7xl mx-auto px-8">
-				<h1 className="text-2xl font-bold">Contact Us Page</h1>
+		<section id="content">
+			<div className="container max-w-lg md:max-w-4xl mx-auto">
+				<h1 className="font-sc font-bold text-xl md:text-4xl text-center py-8">Agora</h1>
 			</div>
 		</section>
 	);
 }
 
-ContactUsPage.propTypes = {
+AgoraPage.propTypes = {
 	// pageProps: PropTypes.shape.isRequired,
 	reset: PropTypes.func.isRequired
 };
 
-export default ContactUsPage;
+export default AgoraPage;

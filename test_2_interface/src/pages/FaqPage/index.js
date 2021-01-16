@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { reset } from '../../redux/actions/ContactUsPage';
-import ContactUsPage from './ContactUsPage';
+import { reset } from '../../redux/actions/FaqPage';
+import FaqPage from './FaqPage';
 
 const mapsStateToProps = (state) => ({
-	pageProps: state.ContactUsPage
+	pageProps: state.FaqPage
 });
 
 const mapsDispatchToProps = (dispatch) => ({
@@ -15,4 +15,4 @@ const mapsDispatchToProps = (dispatch) => ({
 export default connect(
 	mapsStateToProps,
 	mapsDispatchToProps
-)(ContactUsPage);
+)(FaqPage);

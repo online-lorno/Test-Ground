@@ -2,23 +2,23 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 
-function AboutPage(props) {
+function FaqPage(props) {
 	useEffect(() => () => {
 		props.reset();
 	}, []);
 
 	return (
-		<section>
-			<div className="container max-w-7xl mx-auto px-8">
-				<h1 className="text-2xl font-bold">About Page</h1>
+		<section id="content">
+			<div className="container max-w-lg md:max-w-4xl mx-auto">
+				<h1 className="font-sc font-bold text-xl md:text-4xl text-center py-8">FAQ</h1>
 			</div>
 		</section>
 	);
 }
 
-AboutPage.propTypes = {
+FaqPage.propTypes = {
 	// pageProps: PropTypes.shape.isRequired,
 	reset: PropTypes.func.isRequired
 };
 
-export default AboutPage;
+export default FaqPage;
