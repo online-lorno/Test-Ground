@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PoolItem from '../../components/PoolItem';
 
 function HomePage(props) {
@@ -45,22 +46,24 @@ function HomePage(props) {
 					</div>
 
 					{/* View button */}
-					<button
-						type="button"
-						className="btn btn-md btn-secondary w-full"
-					>
-						<div className="flex justify-between">
-							<div className="font-sans font-normal">
-								<span>You have 102.1234992</span>
-								<strong> ROME </strong>
-								<span>staked</span>
+					<Link to="/stake">
+						<button
+							type="button"
+							className="btn btn-md btn-secondary w-full"
+						>
+							<div className="flex justify-between">
+								<div className="font-sans font-normal">
+									<span>You have 102.1234992</span>
+									<strong> ROME </strong>
+									<span>staked</span>
+								</div>
+								<span className="font-sans font-bold uppercase">View</span>
 							</div>
-							<span className="font-sans font-bold uppercase">View</span>
-						</div>
-					</button>
+						</button>
+					</Link>
 
 					{/* Divider */}
-					<hr className="text-rf-gray-100 opacity-50 my-4" />
+					<hr className="text-rf-gray-200 my-4" />
 
 					{/* Bottom content */}
 					<div className="flex justify-between">
@@ -93,7 +96,7 @@ function HomePage(props) {
 				{/* 2nd box */}
 				<h1 className="font-sc font-bold text-xl md:text-4xl text-center py-8">Single Assets Pool</h1>
 				<div className="h-auto p-8 bg-rf-black-100 border-1 border-rf-black-200 rounded-lg mb-16">
-					<div className="grid grid-cols-1 divide-y divide-rf-gray-100 divide-opacity-50">
+					<div className="grid grid-cols-1 divide-y divide-rf-gray-100">
 						{singleAssetPools.map((pool) => (
 							<PoolItem
 								key={`pool-${pool.name}`}

@@ -29,23 +29,31 @@ module.exports = {
 			'rf-yellow-100': '#C5A033',
 			'rf-yellow-200': '#F2BA14',
 			'rf-black-100': '#282525',
-			'rf-black-200': '#1C1414'
+			'rf-black-200': '#1C1414',
+			'rf-black-300': '#111111',
+			'rf-gray-100': '#363636'
 		}),
 		backgroundColor: (theme) => ({
 			...theme('colors'),
 			'rf-black-100': '#0C0A0A',
-			'rf-black-200': '#0F0F0F'
+			'rf-black-200': '#0F0F0F',
+			'rf-gray-100': '#363636',
+			'rf-green-100': '#05210C'
 		}),
 		textColor: (theme) => ({
 			...theme('colors'),
 			'rf-yellow-100': '#C5A033',
 			'rf-yellow-200': '#D9BA51',
-			'rf-gray-100': '#C0BA9F'
+			'rf-gray-100': '#C0BA9F',
+			'rf-gray-200': '#403227'
 		}),
 		divideColor: (theme) => ({
 			...theme('colors'),
-			'rf-gray-100': '#C0BA9F'
-		})
+			'rf-gray-100': '#403227'
+		}),
+		scale: {
+			'100-1': '-1'
+		}
 	},
 	variants: {
 		extend: {}
